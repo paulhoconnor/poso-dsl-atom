@@ -1,14 +1,7 @@
 'fileTypes': [
-  'bowerrc'
-  'eslintrc'
-  'geojson'
-  'jscsrc'
-  'jshintrc'
-  'jslintrc'
-  'json'
-  'topojson'
+  'poso'
 ]
-'name': 'JSON'
+'name': 'POSO'
 'patterns': [
   {
     'include': '#value'
