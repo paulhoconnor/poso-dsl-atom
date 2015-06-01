@@ -1,5 +1,6 @@
 {
-  "name": "language-json",
+  "name": "poso-dsl-atom",
+  "main": "./lib/apiAutocomplete",
   "version": "0.1.0",
   "description": "POSO DSL support in Atom",
   "engines": {
@@ -14,5 +15,19 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/atom/language-json/issues"
-  }
+  },
+  "dependencies": {
+      "atom-package-dependencies": "latest"
+    },
+    "package-dependencies": {
+      "autocomplete-plus": ">=2.5.0",
+      "fuzzaldrin": ">=2.1.0"
+    },
+    "providedServices": {
+      "autocomplete.provider": {
+        "versions": {
+          "2.0.0": "provider"
+        }
+      }
+    }
 }

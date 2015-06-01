@@ -1,0 +1,35 @@
+@import "ui-variables";
+
+atom-text-editor::shadow .meta.structure.dictionary.json {
+  // Keys
+  & > .string.quoted.json,
+  .punctuation.definition.string.json {
+    color: blue;
+  }
+
+  // Values
+  & > .value.json > .string.json,
+  .value:not(:first-child) .punctuation.definition.string.json,
+  .array.json > .string.quoted.double.json .punctuation.definition.string.json {
+    color: green;
+  }
+
+  & > .value.json.badposo {
+    color: red
+  }
+
+  & > .value.json.endpoint {
+    color: green
+  }
+}
+
+atom-text-editor::shadow .meta.structure.array.json {
+  // Keys
+  & > .string.quoted.json,
+  .punctuation.definition.string.json {
+    color: green;
+  }
+
+.apiAutocomplete {
+  }
+}
