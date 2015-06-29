@@ -1,10 +1,19 @@
 @import "ui-variables";
 
-atom-text-editor::shadow .meta.structure.dictionary.json {
+atom-text-editor::shadow .meta.structure.dictionary.poso.json {
   // Keys
-  & > .string.quoted.json,
+  & > .string.quoted.poso.key.json,
   .punctuation.definition.string.json {
     color: blue;
+  }
+
+  & > .string.quoted.json,
+  .punctuation.definition.string.json {
+    color: green;
+  }
+
+  & > .value.json.badposo {
+    color: red
   }
 
   // Values
@@ -23,12 +32,12 @@ atom-text-editor::shadow .meta.structure.dictionary.json {
   }
 }
 
-atom-text-editor::shadow .meta.structure.array.json {
-  // Keys
-  & > .string.quoted.json,
-  .punctuation.definition.string.json {
-    color: green;
-  }
+  atom-text-editor::shadow .meta.structure.array.json {
+    // Keys
+    & > .string.quoted.json,
+    .punctuation.definition.string.json {
+      color: green;
+    }
 
 .apiAutocomplete {
   }

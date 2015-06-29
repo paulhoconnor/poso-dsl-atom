@@ -1,5 +1,5 @@
 'fileTypes': [
-  'poso'
+  'pogo'
 ]
 'name': 'POSO'
 'patterns': [
@@ -80,7 +80,7 @@
       }
       {
         'comment': 'the JSON object key'
-        'include': '#string'
+        'include': '#posoKeyString'
       }
       {
         'begin': ':'
@@ -106,6 +106,30 @@
       {
         'match': '[^\\s\\}]'
         'name': 'invalid.illegal.expected-dictionary-separator.json'
+      }
+    ]
+  'posoKeyString':
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.json'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.json'
+    'name': 'string.quoted.double.json'
+    'patterns': [
+      {
+        'match': '\\b(?:(?!(name|posoType|apis|initialContext|steps|notifications|comment)).)*\\b'
+        'name': 'value.json.badposo'
+      }
+      {
+        'match': '(?x:                # turn on extended mode\n                     \\\\                # a literal backslash\n                     (?:               # ...followed by...\n                       ["\\\\/bfnrt]     # one of these characters\n                       |               # ...or...\n                       u               # a u\n                       [0-9a-fA-F]{4}  # and four hex digits\n                     )\n                   )'
+        'name': 'constant.character.escape.json'
+      }
+      {
+        'match': '\\\\.'
+        'name': 'invalid.illegal.unrecognized-string-escape.json'
       }
     ]
   'string':
@@ -138,6 +162,9 @@
         'include': '#number'
       }
       {
+        'include': '#posoType'
+      }
+      {
         'include': '#string'
       }
       {
@@ -147,4 +174,4 @@
         'include': '#object'
       }
     ]
-'scopeName': 'source.poso'
+'scopeName': 'source.pogo'
